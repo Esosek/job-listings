@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${leagueSpartan.className} text-primary`}>
+      <body className={`${leagueSpartan.className} text-primary bg-cyan-100`}>
         {children}
       </body>
     </html>
