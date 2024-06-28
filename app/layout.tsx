@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { League_Spartan } from 'next/font/google';
+
 import './globals.css';
 import favicon from '@/public/images/favicon.png';
 
@@ -17,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={leagueSpartan.className}>{children}</body>
+      <body className={`${leagueSpartan.className} text-primary`}>
+        {children}
+      </body>
     </html>
   );
 }
