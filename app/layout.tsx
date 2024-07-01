@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { League_Spartan } from 'next/font/google';
 
 import './globals.css';
-import favicon from '@/images/favicon.png';
+import favicon from '@/public/images/favicon.png';
 
 const leagueSpartan = League_Spartan({ subsets: ['latin'] });
 
