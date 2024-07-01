@@ -1,22 +1,7 @@
 import Image from 'next/image';
 import KeywordLabel from './KeywordLabel';
 import Link from 'next/link';
-
-type Job = {
-  id: number;
-  company: string;
-  logo: string;
-  new: boolean;
-  featured: boolean;
-  position: string;
-  role: string;
-  level: string;
-  postedAt: string;
-  contract: string;
-  location: string;
-  languages: string[];
-  tools: string[];
-};
+import { type Job } from '@/types/Job';
 
 type JobItemProps = {
   job: Job;
