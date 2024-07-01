@@ -24,8 +24,8 @@ export default function JobList({ jobs }: JobListProps) {
         });
   return (
     <ul>
-      {filteredJobs.map((job) => (
-        <JobItem key={job.id} job={job} />
+      {filteredJobs.map((job, index) => (
+        <JobItem key={job.id} job={job} order={index} />
       ))}
     </ul>
   );

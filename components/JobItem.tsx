@@ -5,9 +5,10 @@ import { type Job } from '@/types/Job';
 
 type JobItemProps = {
   job: Job;
+  order: number;
 };
 
-export default function JobItem({ job }: JobItemProps) {
+export default function JobItem({ job, order }: JobItemProps) {
   const keywords = [job.role, job.level, ...job.languages, ...job.tools];
   return (
     <li className="relative bg-white px-6 py-8 my-12 rounded-md shadow-lg shadow-primary/35 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:justify-start lg:gap-4 lg:py-4 lg:my-6">
@@ -16,7 +17,12 @@ export default function JobItem({ job }: JobItemProps) {
       )}
 
       <div className="absolute size-12 -top-6 lg:relative lg:size-20 lg:top-0">
-        <Image src={job.logo} fill={true} alt={`Logo of ${job.company}`} />
+        <Image
+          src={job.logo}
+          fill={true}
+          alt={`Logo of ${job.company}`}
+          priority={order < 4}
+        />
       </div>
 
       <div>
