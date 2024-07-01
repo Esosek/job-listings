@@ -1,12 +1,15 @@
 'use client';
+
+import FilterContext from '@/context/FilterContext';
+import { useContext } from 'react';
+
 type KeywordLabelProps = {
   keyword: string;
 };
 
 export default function KeywordLabel({ keyword }: KeywordLabelProps) {
-  function handleKeywordSelect(keyword: string) {
-    console.log('Added', keyword, 'as filter');
-  }
+  const { addFilter } = useContext(FilterContext)!;
+  const handleKeywordSelect = (keyword: string) => addFilter(keyword);
   return (
     <li>
       <button
