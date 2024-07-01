@@ -22,6 +22,7 @@ export default function JobItem({ job, order }: JobItemProps) {
           fill={true}
           alt={`Logo of ${job.company}`}
           priority={order < 4}
+          loading={order < 4 ? 'eager' : 'lazy'}
         />
       </div>
 
