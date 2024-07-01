@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import KeywordLabel from './KeywordLabel';
+import Link from 'next/link';
 
 type Job = {
   id: number;
@@ -24,7 +25,7 @@ type JobItemProps = {
 export default function JobItem({ job }: JobItemProps) {
   const keywords = [job.role, job.level, ...job.languages, ...job.tools];
   return (
-    <li className="relative bg-white px-6 py-8 my-12 rounded-md shadow-lg shadow-primary/35 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-4 lg:py-4 lg:my-6">
+    <li className="relative bg-white px-6 py-8 my-12 rounded-md shadow-lg shadow-primary/35 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:justify-start lg:gap-4 lg:py-4 lg:my-6">
       {job.featured && (
         <div className="absolute top-0 bottom-0 left-0 w-[0.3rem] bg-primary rounded-l-md"></div>
       )}
@@ -48,7 +49,11 @@ export default function JobItem({ job }: JobItemProps) {
             </p>
           )}
         </div>
-        <h3 className="font-bold text-cyan-700 mt-2">{job.position}</h3>
+        <h3 className="font-bold mt-4">
+          <Link href="#" className=" text-cyan-700 hover:text-primary">
+            {job.position}
+          </Link>
+        </h3>
         <p className="mt-2 text-cyan-500">
           {job.postedAt} <span className="mx-1">&#8226;</span> {job.contract}{' '}
           <span className="mx-1">&#8226;</span> {job.location}
