@@ -8,7 +8,7 @@ export default function Home() {
       <header
         className={`${styles.header} bg-primary h-[156px] w-auto`}
       ></header>
-      <main className="max-w-5xl px-4">
+      <main className="max-w-5xl px-6 mx-auto">
         <ul>
           {jobData.map((job) => (
             <JobItem key={job.id} job={job} />
